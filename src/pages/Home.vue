@@ -27,9 +27,9 @@
 	</div>
 </template>
 <script>
-import Sidebar from './components/Sidebar.vue'
-import Card from './components/Card.vue'
-import Number from './components/Number.vue'
+import Sidebar from '../components/Sidebar.vue'
+import Card from '../components/Card.vue'
+import Number from '../components/Number.vue'
 export default {
 	components : {
 		Sidebar,
@@ -49,17 +49,18 @@ export default {
 		fetch('/get-data').then(res => {
 			res.json().then((data) => {
 				this.governments = data;
-				this.open_section(this.selected_gov);
+				this.open_section();
 			})
 		})
 	},
 	methods: {
-		open_section(item_index) {
+		open_section(item_index=0) {
 			this.selected_gov = item_index;
 			this.content = null;
 			this.sections = this.governments[item_index].sections;
+			this.open_content();
 		},
-		open_content(item_index) {
+		open_content(item_index=0) {
 			this.selected_section = item_index
 			this.contents = this.sections[item_index].contents;
 		}

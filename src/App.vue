@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Home from './Home.vue';
+import Home from './pages/Home.vue';
 import './style.css';
 
 export default {

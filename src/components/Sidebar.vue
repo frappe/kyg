@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div v-if="filtered_items && filtered_items.length" class="border-r-2 w-48">
 		<a
 			class="list-reset p-3 flex flex-col cursor-pointer"
 			:class="{ 'bg-blue hover:bg-blue': index === selected }"

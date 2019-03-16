@@ -1,14 +1,13 @@
 <template>
 	<div class="flex">
-		<sidebar class="border-r-2 w-48"
+		<sidebar
 			:selected="selected_gov"
 			@item_clicked="open_section"
 			:items="governments">
 		</sidebar>
 		<sidebar
-			class="border-r-2 w-48"
-			@item_clicked="open_content"
 			:selected="selected_section"
+			@item_clicked="open_content"
 			:items="sections">
 		</sidebar>
 		<div class="flex flex-col">
@@ -56,12 +55,12 @@ export default {
 	methods: {
 		open_section(item_index=0) {
 			this.selected_gov = item_index;
-			this.sections = this.governments[item_index].sections || [];
+			this.sections = this.governments[item_index] && this.governments[item_index].sections || [];
 			this.open_content();
 		},
 		open_content(item_index=0) {
 			this.selected_section = item_index;
-			this.contents = this.sections[item_index].contents || [];
+			this.contents = this.sections[item_index] && this.sections[item_index].contents || [];
 		}
 	}
 }

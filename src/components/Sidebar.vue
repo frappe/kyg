@@ -1,8 +1,8 @@
 <template>
 	<div>
 		<a
-			class="list-reset p-3 flex flex-col hover:bg-grey cursor-pointer"
-			:class="{ 'bg-blue': index === selected }"
+			class="list-reset p-3 flex flex-col cursor-pointer"
+			:class="{ 'bg-blue hover:bg-blue': index === selected }"
 			v-for="(item, index) in filtered_items"
 			:key="index" @click="$emit('item_clicked', index)">{{ item.label || item }}
 		</a>
@@ -23,6 +23,3 @@ export default {
 	}
 }
 </script>
-<style lang="less">
-
-</style>

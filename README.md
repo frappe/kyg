@@ -17,9 +17,13 @@ Know Your Government is targeted towards voters in India so that they can make m
 
 ### Start
 
-The application is built in flask
+The application is built in flask and Vue
 
 ```
 export FLASK_APP=app.py
 flask run
+```
+
+```
+yarn build --watch
 ```

@@ -56,23 +56,13 @@ export default {
 	methods: {
 		open_section(item_index=0) {
 			this.selected_gov = item_index;
-			this.content = null;
-			this.sections = this.governments[item_index].sections;
+			this.sections = this.governments[item_index].sections || [];
 			this.open_content();
 		},
 		open_content(item_index=0) {
-			this.selected_section = item_index
-			this.contents = this.sections[item_index].contents;
+			this.selected_section = item_index;
+			this.contents = this.sections[item_index].contents || [];
 		}
 	}
 }
 </script>
-<style lang="less">
-.flag {
-	div {
-		height: calc(100vh/3);
-		background: green;
-		width: 100%;
-	}
-}
-</style>

@@ -1,14 +1,29 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, send_from_directory, send_file
 import os, json
 
-app = Flask(__name__)
+template_folder = os.path.abspath(os.path.join(os.path.dirname(__file__), 'dist'))
+app = Flask(__name__,
+    static_folder='./dist',
+    template_folder='./dist')
 
 @app.route('/')
 def index():
     return render_template('index.html', data=get_data())
 
+@app.route('/app.js')
+def send_static_from_home():
+    return send_file('dist/app.js')
+
+@app.route('/js/<path:path>')
+def send_js(path):
+    return send_from_directory('dist/js', path)
+
+@app.route('/css/<path:path>')
+def send_css(path):
+    return send_from_directory('dist/css', path)
+
 @app.route('/get-data')
-def get_data_json():
+def send_get_data():
     return jsonify(get_data())
 
 def get_data():

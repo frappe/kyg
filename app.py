@@ -22,6 +22,10 @@ def send_js(path):
 def send_css(path):
     return send_from_directory('dist/css', path)
 
+@app.route('/assets/<path:path>')
+def send_assets(path):
+    return send_from_directory('dist/assets', path)
+
 @app.route('/get-data')
 def send_get_data():
     return jsonify(get_data())

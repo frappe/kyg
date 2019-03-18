@@ -1,29 +1,29 @@
 import os
 
-loksabha = '''First	May 1952
-Second	April 1957
-Third	April 1962
-Fourth	March 1967
-Fifth	March 1971
-Sixth	March 1977
-Seventh	January 1980
-Eighth	December 1984
-Ninth	December 1989
-Tenth	June 1991
-Eleventh	May 1996
-Twelfth	March 1998
-Thirteenth	October 1999
-Fourteenth	May 2004
-Fifteenth	May 2009
-Sixteenth 	May 2014'''
+loksabha = '''1st Lok Sabha	May 1952
+2nd Lok Sabha	April 1957
+3rd Lok Sabha	April 1962
+4th Lok Sabha	March 1967
+5th Lok Sabha	March 1971
+6th Lok Sabha	March 1977
+7th Lok Sabha	January 1980
+8th Lok Sabha	December 1984
+9th Lok Sabha	December 1989
+10th Lok Sabha	June 1991
+11th Lok Sabha	May 1996
+12th Lok Sabha	March 1998
+13th Lok Sabha	October 1999
+14th Lok Sabha	May 2004
+15th Lok Sabha	May 2009
+16th Lok Sabha 	May 2014'''
 
 def make_folders():
-    for row in loksabha.split('\n'):
-        label, month, year = row.split()
-        path = os.path.join(os.path.dirname(__file__), 'data', label.lower())
-        os.makedirs(path)
-        with open(os.path.join(path, 'config.json'), 'w') as f:
-            f.write('{ "label": "%s", "from": "%s" }' % (label, month + ' ' + year))
+	for row in loksabha.split('\n'):
+		label, month_year = row.split('\t')
+		path = os.path.join(os.path.dirname(__file__), 'data', label)
+		os.makedirs(path)
+		with open(os.path.join(path, 'config.json'), 'w') as f:
+			f.write('{ "label": "%s", "from": "%s", "wikipedia_page_id": "%s"}' % (label, month_year, label.replace(' ', '_')))
 
 if __name__ == '__main__':
-    make_folders()
+	make_folders()

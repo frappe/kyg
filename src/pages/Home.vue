@@ -10,30 +10,42 @@
 			@item_clicked="open_content"
 			:items="sections">
 		</sidebar>
-		<div class="flex flex-col">
+		<div class="flex flex-col px-5">
 			<div v-for="content in contents" :key="content.label" >
 				<card
 					v-if="content.content_type == 'card'"
-					class="p-5"
 					:heading="content.label" :content="content.content" :image="content.image">
 				</card>
 				<number v-else-if="content.content_type == 'number'"
 					:label="content.label"
 					:value="content.value">
 				</number>
+				<wikipedia
+					v-else-if="content.content_type == 'wikipedia'"
+					:page_id="content.page_id">
+				</wikipedia>
+				<message-box v-else :label="content.label" :content="content.content"></message-box>
+				<government-summary :items="[{'label': 'aa', 'value': 'asdf'}, {'label': 'aa', 'value': 'asdf'}]"></government-summary>
 			</div>
 		</div>
 	</div>
 </template>
 <script>
-import Sidebar from '../components/Sidebar.vue'
-import Card from '../components/Card.vue'
-import Number from '../components/Number.vue'
+import Sidebar from '../components/Sidebar.vue';
+import Card from '../components/Card.vue';
+import Number from '../components/Number.vue';
+import MessageBox from '../components/MessageBox.vue';
+import Wikipedia from '../components/Wikipedia.vue';
+import GovernmentSummary from '../components/GovernmentSummary.vue';
+
 export default {
 	components : {
 		Sidebar,
 		Card,
-		Number
+		Number,
+		MessageBox,
+		Wikipedia,
+		GovernmentSummary
 	},
 	data() {
 		return {

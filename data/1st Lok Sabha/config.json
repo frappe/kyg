@@ -1,0 +1,92 @@
+{
+	"label": "1st Lok Sabha",
+	"from": "May 1952",
+	"wikipedia_page_id": "1st_Lok_Sabha",
+	"sections": [
+		{
+			"label": "Summary",
+			"contents": [
+				{
+					"page_id": "1st_Lok_Sabha",
+					"content_type": "wikipedia"
+				},
+				{
+					"label": "No. of farmer suicides",
+					"value": 12355,
+					"content_type": "number"
+				},
+				{
+					"label": "Prime Minister"
+				}
+			]
+		},
+		{
+			"label": "Events",
+			"contents": [
+				{
+					"page_id": "Sino-Indian_War",
+					"content_type": "wikipedia"
+				},
+				{
+					"page_id": "Green_Revolution_in_India",
+					"content_type": "wikipedia"
+				},
+				{
+					"page_id": "Banking_in_India#Nationalisation_in_1969_and_1980",
+					"content_type": "wikipedia"
+				},
+				{
+					"page_id": "Indo-Pakistani_War_of_1971",
+					"content_type": "wikipedia"
+				},
+				{
+					"page_id": "The_Emergency_(India)",
+					"content_type": "wikipedia"
+				},
+				{
+					"page_id": "Mandal_Commission",
+					"content_type": "wikipedia"
+				},
+				{
+					"page_id": "Economic_liberalisation_in_India",
+					"content_type": "wikipedia"
+				},
+				{
+					"page_id": "Right_to_Information_Act,_2005",
+					"content_type": "wikipedia"
+				}
+
+			]
+		},
+		{
+			"label": "Ideology",
+			"contents": [
+				{
+					"label": "Introduction",
+					"content": "This government was great!!! LOL",
+					"content_type": "text"
+				}
+			]
+		},
+		{
+			"label": "Economy",
+			"contents": [
+				{
+					"label": "Introduction",
+					"content": "This government was great!!! LOL",
+					"content_type": "text"
+				}
+			]
+		},
+		{
+			"label": "Achievements",
+			"contents": [
+				{
+					"label": "Demonetization",
+					"content": "Curb black money",
+					"content_tyoe": "text"
+				}
+			]
+		}
+	]
+}

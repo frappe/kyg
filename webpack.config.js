@@ -1,4 +1,5 @@
 const tailwindcss = require('tailwindcss');
+const CopyPlugin = require('copy-webpack-plugin');
 module.exports = {
 	module: {
 		rules: [{
@@ -8,5 +9,11 @@ module.exports = {
 	},
 	plugins: [
 		tailwindcss('./tailwind.js'),
+		new CopyPlugin([
+			{
+				from: 'src/assets',
+				to: 'assets',
+			},
+		]),
 	]
 };
